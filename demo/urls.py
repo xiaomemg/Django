@@ -22,5 +22,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^users/',include('users.urls')),
     url(r'^reqresp/',include('reqresp.urls')),
-    url(r'^read/',include('read.urls'))
+    url(r'^read/',include('read.urls')),
+    url(r'^cook/',include('cook.urls')),
+    url(r'^session/',include('session.urls')),
+    url(r'^demo_view/',include('demo_view.urls'))
 ]

@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -130,3 +130,20 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static_files')
 ]
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        # 定义django中redis的位置
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            # django使用redis的默认客户端来进行操作.
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+# 我们定义一个cache(本地缓存来存储信息,cahe指定的是redis)
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+# 本地的session使用的本地缓存名称是'default', 这个名称就是上面我们配置的caches的名
+# 称"default"
+SESSION_CACHE_ALIAS = "default"
