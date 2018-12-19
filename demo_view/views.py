@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.utils.decorators import method_decorator
 from django.views import View
 
 
@@ -9,20 +10,24 @@ from django.views import View
 #     return None
 # 定义一个装饰器
 def my_decorator(func):
-    def wrpper(self, request, *args, **kwargs):
+    # def wrpper(request, *args, **kwargs):
+    def wrpper(self,request, *args, **kwargs):
         print('起来了')
         print('%s' % request.method)
-        return func(self, request, *args, **kwargs)
+        return func(self,request, *args, **kwargs)
 
     return wrpper
 
 
 # 创建一个类视图
 class demoview(View):
+
     @my_decorator
+    # @method_decorator(my_decorator)
     def get(self, request):
         return HttpResponse('走，我们走')
 
     @my_decorator
+    # @method_decorator(my_decorator)
     def post(self, request):
         return HttpResponse('Bug出现了')
