@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'demo_table.apps.DemoTableConfig'
 ]
 
 MIDDLEWARE = [
@@ -53,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'users.middleware.my_middleware',  # 添加中间件
+    'users.my_middleware.my_middleware',  # 添加中间件
 ]
 
 ROOT_URLCONF = 'demo.urls'
@@ -83,8 +84,13 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        # 配置一些访问参数
+        'HOST':'127.0.0.1',
+        'POST':3306,
+        'USER':'root',
+        'PASSWORD':'mysql',
+        'NAME':'demo21',
     }
 }
 
