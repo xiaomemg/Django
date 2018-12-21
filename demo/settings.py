@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
-    'demo_table.apps.DemoTableConfig'
+    'demo_table.apps.DemoTableConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -117,12 +118,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 # 语言是英文
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
 # 语言是中文
-# LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
-# TIME_ZONE = 'Asian/ShangHai'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 

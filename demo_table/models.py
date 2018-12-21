@@ -15,6 +15,12 @@ class BookInfo(models.Model):
     def __str__(self):
         return self.btitle
 
+    def pub_date(self):
+        return self.bpub_date.strftime('%Y年%m月%d日')
+
+    pub_date.short_description = '发布日期'  # 设置方法字段在admin中显示的标题
+    pub_date.admin_order_file = 'bpub_date'
+
 class HeroInfo(models.Model):
     GENDER_CHOICES = (
         (0,'男'),
@@ -33,3 +39,9 @@ class HeroInfo(models.Model):
 
     def __str__(self):
         return self.hname
+
+    def read(self):
+        return self.hbook.bread
+    read.short_description = '图书阅读量'
+    # 图书阅读量的排序是根据评论量来安排的
+    read.admin_order_field = 'hcomment'

@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^read/',include('read.urls')),
     url(r'^cook/',include('cook.urls')),
     url(r'^session/',include('session.urls')),
-    url(r'^demo_view/',include('demo_view.urls'))
+    url(r'^demo_view/',include('demo_view.urls')),
+    url(r'^demo_table/',include('demo_table.urls'))
 ]
