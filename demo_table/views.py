@@ -71,3 +71,10 @@ class BookInfoDetailView(View):
             'bcomment': book.bcomment
         })
 
+# 增删改查
+# get 获取所有的数据　/books/
+# post  新增　　/books/
+
+# get 获取当个数据　/books/(?p<pk>\d+)
+# put 修改　　/books/(?p<pk>\d+)
+# delete 删除　/books/(?p<pk>\d+)

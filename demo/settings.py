@@ -156,3 +156,4 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 # 本地的session使用的本地缓存名称是'default', 这个名称就是上面我们配置的caches的名
 # 称"default"
 SESSION_CACHE_ALIAS = "default"
+MEDIA_ROOT=os.path.join(BASE_DIR,"static_files/media")

@@ -46,3 +46,6 @@ class HeroInfoAdmin(admin.ModelAdmin):
 
 admin.site.register(BookInfo,BookInfoAdmin)
 admin.site.register(HeroInfo,HeroInfoAdmin)
+admin.site.site_header = '网上书城'
+admin.site.site_title = '免费书城'
+admin.site.index_title = '欢迎进入书城世界'

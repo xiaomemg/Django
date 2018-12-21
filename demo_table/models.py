@@ -7,7 +7,8 @@ class BookInfo(models.Model):
     bread = models.CharField(max_length=200,verbose_name='阅读量')
     bcomment = models.IntegerField(default=0,verbose_name='评论量')
     is_delete = models.BooleanField(default=False,verbose_name='逻辑删除')
-
+    # 添加一个图片字段
+    image = models.ImageField(upload_to='booktest', verbose_name='图片', null=True)
     class Meta:
         db_table = 'tb_book'
         verbose_name = '图书'
@@ -20,6 +21,7 @@ class BookInfo(models.Model):
 
     pub_date.short_description = '发布日期'  # 设置方法字段在admin中显示的标题
     pub_date.admin_order_file = 'bpub_date'
+
 
 class HeroInfo(models.Model):
     GENDER_CHOICES = (
